@@ -1,10 +1,9 @@
 .galerija {
   margin-top: 1rem;
-  background-image: url(./../../assets/img/321580656_1315347745983668_4073054583856034283_n.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 80%;
-  width: 100%;
+  margin-bottom: 1rem;
+  background-color: var(--Tiffany-Blue);
+
+  width: 80%;
   height: 500px;
   display: flex;
   flex-direction: column;
@@ -18,4 +17,14 @@
   h2 {
     margin-top: 1rem;
   }
+}
+
+img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+  height: 460px;
 }
