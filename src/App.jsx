@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar/Navbar';
+import Navigacija from './components/Navigacija/Navigacija';
 import Pagrindinis from './components/Pagrindinis/Pagrindinis';
 import './App.css';
 import Paslaugos from './components/Paslaugos/Paslaugos';
@@ -13,7 +13,7 @@ import './App.css';
 function App() {
   return (
     <>
-      <Navbar />
+      <Navigacija />
       <Routes>
         <Route path="/" element={<Pagrindinis />} />
         <Route path="/paslaugos" element={<Paslaugos />} />

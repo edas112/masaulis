@@ -6,7 +6,7 @@ import Galerija from '../Galerija/Galerija.jsx';
 function Pagrindinis() {
   return (
     <>
-      <div className="conteiner-pagrindinis">
+      <div className="conteiner-pagrindinis container">
         <h1>Apdailos Darbai</h1>
         <p>
           Profesionalų komanda atliekanti visus statybos, remonto, apdailos,
