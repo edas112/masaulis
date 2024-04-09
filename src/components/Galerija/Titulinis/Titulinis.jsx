@@ -1,5 +1,5 @@
 import { Carousel } from 'react-bootstrap';
-
+import Img from '../../../assets/img/321428278_726151968599493_3016709172147485044_n.jpg';
 function Titulinis() {
   return (
     <div>
@@ -7,7 +7,7 @@ function Titulinis() {
         <Carousel.Item>
           <img
             className="container"
-            src="../src/assets/img/321428278_726151968599493_3016709172147485044_n.jpg"
+            src={Img}
             alt="First slide"
             style={{ width: '33%' }}
           />
