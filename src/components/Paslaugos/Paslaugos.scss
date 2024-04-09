@@ -1,0 +1,14 @@
+.paslaugos {
+  margin-bottom: 1rem;
+  background-color: var(--Tiffany-Blue);
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  margin-top: 1rem;
+  li {
+    margin-top: 1rem;
+    font-size: 25px;
+  }
+}

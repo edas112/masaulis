@@ -7,7 +7,7 @@ function Pagrindinis() {
   return (
     <>
       <div className="conteiner-pagrindinis container">
-        <h1>Apdailos Darbai</h1>
+        <h1>MB Masaulis</h1>
         <p>
           Profesionalų komanda atliekanti visus statybos, remonto, apdailos,
           elektros instaliacijos darbus! <br /> VISUS DARBUS ATLIEKAME

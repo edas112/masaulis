@@ -11,8 +11,6 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
 function Navigacija() {
   return (
     <>
@@ -43,7 +41,7 @@ function Navigacija() {
           }}
         />
 
-        <Navbar.Collapse className="collapse" id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
             <NavLink className="nav-links" to="/">
               Pagrindinis

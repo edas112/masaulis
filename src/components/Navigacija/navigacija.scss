@@ -51,7 +51,7 @@
 
   list-style: none;
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
   text-decoration: none;
   color: var(--Tiffany-Blue);
 
@@ -60,7 +60,7 @@
   cursor: pointer;
 
   &:hover {
-    font-size: 23px;
+    font-size: 27px;
     color: var(--Aquamarine);
   }
   &.active,
@@ -79,6 +79,7 @@
 
 .logo {
   margin-left: 3rem;
+  margin-right: 3rem;
   color: var(--Tiffany-Blue);
 
   font-size: 40px;
