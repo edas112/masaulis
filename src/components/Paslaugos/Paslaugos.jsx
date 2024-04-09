@@ -1,23 +1,12 @@
-import './paslaugos.scss';
+import './paslaugos.css';
 
 import Kortele from './Kortele/Kortele';
+import Titulinis from './Titulinis/Titulinis';
 
 function Paslaugos() {
   return (
     <>
-      <div className="paslaugos container">
-        <h1>Mūsų teikiamos paslaugos</h1>
-        <ul>
-          <li>Dažymas</li>
-          <li>Glaistymas</li>
-          <li>Tinkavimas</li>
-          <li>Tapetavimas</li>
-          <li>Gipso montavimas</li>
-          <li>Smulkūs elektros darbai</li>
-          <li>Durų montavimas</li>
-          <li>Drindų dangos įrengimas</li>
-        </ul>
-      </div>
+      <Titulinis />
       <div>{/* <Kortele /> */}</div>
     </>
   );

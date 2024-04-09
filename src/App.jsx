@@ -8,8 +8,6 @@ import Kontaktai from './components/Kontaktai/Kontaktai';
 import Apiemus from './components/Apiemus/Apiemus';
 import Footer from './components/Footer/Footer';
 
-import './App.css';
-
 function App() {
   return (
     <>

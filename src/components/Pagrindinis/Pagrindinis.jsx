@@ -1,4 +1,4 @@
-import './pagrindinis.scss';
+import './pagrindinis.css';
 
 import Paslaugos from '../Paslaugos/Paslaugos.jsx';
 import Galerija from '../Galerija/Galerija.jsx';
