@@ -26,8 +26,8 @@
 
     text-align: justify;
   }
+}
 
-  @include tablet {
-    width: 47%;
-  }
+@include tablet {
+  width: 47%;
 }
