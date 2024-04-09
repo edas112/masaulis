@@ -2,7 +2,7 @@
 
 .conteiner-pagrindinis {
   margin-top: 1rem;
-  //   background-color: #d7e5ca;
+
   background-image: url(./../../assets/img/321580656_1315347745983668_4073054583856034283_n.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -30,8 +30,4 @@
   @include tablet {
     width: 47%;
   }
-
-  // @include mobile {
-  //   width: 100%;
-  // }
 }
