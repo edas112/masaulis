@@ -1,4 +1,4 @@
-import './navigacija.css';
+import './navigacija.scss';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
