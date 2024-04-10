@@ -3,11 +3,11 @@ import Img from '../../../assets/img/321428278_726151968599493_30167091721474850
 import Img2 from '../../../assets/img/322252237_5401922049911849_343718617657941608_n.jpg';
 import Img3 from '../../../assets/img/322878445_685586683234553_8194654702181948721_n.jpg';
 import Img4 from '../../../assets/img/322297695_547332113961748_3551942094303599329_n.jpg';
-import Img5 from '../../../assets/img/322878445_685586683234553_8194654702181948721_n.jpg';
-import Img6 from '../../../assets/img/322297695_547332113961748_3551942094303599329_n.jpg';
-import Img7 from '../../../assets/img/322252237_5401922049911849_343718617657941608_n.jpg';
-import Img8 from '../../../assets/img/322297695_547332113961748_3551942094303599329_n.jpg';
-import Img9 from '../../../assets/img/322252237_5401922049911849_343718617657941608_n.jpg';
+import Img5 from '../../../assets/img/IMG_20231117_095157.jpg';
+import Img6 from '../../../assets/img/IMG_20240227_145526.jpg';
+import Img7 from '../../../assets/img/321207935_931781768170726_15131688440972736_n.jpg';
+import Img8 from '../../../assets/img/321438208_612646523954695_7420435748983436546_n.jpg';
+import Img9 from '../../../assets/img/321449442_561094922698582_3081856111906249462_n.jpg';
 
 function Titulinis() {
   return (
