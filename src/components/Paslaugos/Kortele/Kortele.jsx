@@ -1,11 +1,9 @@
-function Kortele(title, description, img) {
+function Kortele({ title, description, img }) {
   return (
     <div>
-      <h3>
-        {title}
-        {img}
-      </h3>
+      <h3>{title}</h3>
       <p>{description}</p>
+      <img src={img} />
     </div>
   );
 }
