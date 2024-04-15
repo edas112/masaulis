@@ -1,4 +1,4 @@
-import './paslaugos.css';
+import './paslaugos.scss';
 import { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 
@@ -11,7 +11,7 @@ function Paslaugos() {
   return (
     <>
       <Titulinis />
-      <div>
+      <div className="korteles container">
         {data.map((item) => {
           return (
             <Kortele
