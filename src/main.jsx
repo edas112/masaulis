@@ -4,13 +4,16 @@ import App from './App.jsx';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AppContextProvider from './context/AppContext.jsx';
 
 import './variables.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <AppContextProvider>
+        <App />
+      </AppContextProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
