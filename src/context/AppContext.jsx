@@ -1,6 +1,5 @@
 import { useState, createContext, useEffect } from 'react';
 
-import { Await } from 'react-router-dom';
 import { cfg } from './AppContext';
 export const AppContext = createContext();
 export { cfg } from '../cfg/cfg';

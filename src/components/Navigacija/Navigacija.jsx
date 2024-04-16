@@ -16,16 +16,20 @@ function Navigacija() {
     <>
       <div className="nav-info">
         <a href="https://www.facebook.com/masaulis">
-          <FontAwesomeIcon icon={faFacebook} /> Facebook
+          <FontAwesomeIcon icon={faFacebook} />
+          <span>Facebook</span>
         </a>
         <a href="">
-          <FontAwesomeIcon icon={faMobileScreenButton} /> +37065796289
+          <FontAwesomeIcon icon={faMobileScreenButton} />
+          <span>+37065796289</span>
         </a>
         <a href="">
-          <FontAwesomeIcon icon={faEnvelope} /> mbmasaulis@gmail.com
+          <FontAwesomeIcon icon={faEnvelope} />
+          <span>mbmasaulis@gmail.com</span>
         </a>
         <a href="">
-          <FontAwesomeIcon icon={faHouse} /> MB Masaulis
+          <FontAwesomeIcon icon={faHouse} />
+          <span>MB Masaulis</span>
         </a>
       </div>
       <Navbar expand="lg" className="nav">

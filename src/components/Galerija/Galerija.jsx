@@ -1,4 +1,4 @@
-import './galerija.css';
+import './galerija.scss';
 
 import Titulinis from './Titulinis/Titulinis';
 
