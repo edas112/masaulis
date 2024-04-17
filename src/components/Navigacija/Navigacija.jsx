@@ -59,7 +59,14 @@ function Navigacija() {
               MB Masaulis
             </Offcanvas.Title>
           </Offcanvas.Header>
-          <Offcanvas.Body style={{ backgroundColor: 'var(--Feldgrau)' }}>
+          <Offcanvas.Body
+            style={{
+              backgroundColor: 'var(--Feldgrau)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
             <Nav>
               <NavLink className="nav-links" to="/">
                 Pagrindinis
