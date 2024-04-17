@@ -7,6 +7,7 @@ import Galerija from './components/Galerija/Galerija';
 import Kontaktai from './components/Kontaktai/Kontaktai';
 import Apiemus from './components/Apiemus/Apiemus';
 import Footer from './components/Footer/Footer';
+import Admin from './components/Admin/Admin';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/galerija" element={<Galerija />} />
         <Route path="/kontaktai" element={<Kontaktai />} />
         <Route path="/apiemus" element={<Apiemus />} />
+        <Route path="/admin" element={<Admin />} />
       </Routes>
       <Footer />
     </>

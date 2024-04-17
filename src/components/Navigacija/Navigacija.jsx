@@ -10,6 +10,7 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 function Navigacija() {
   return (
@@ -44,26 +45,40 @@ function Navigacija() {
             marginRight: '3rem',
           }}
         />
-
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav>
-            <NavLink className="nav-links" to="/">
-              Pagrindinis
-            </NavLink>
-            <NavLink className="nav-links" to="/paslaugos">
-              Paslaugos
-            </NavLink>
-            <NavLink className="nav-links" to="/galerija">
-              Galerija
-            </NavLink>
-            <NavLink className="nav-links" to="/apiemus">
-              Apie Mus
-            </NavLink>
-            <NavLink className="nav-links" to="/kontaktai">
-              Kontaktai
-            </NavLink>
-          </Nav>
-        </Navbar.Collapse>
+        <Navbar.Offcanvas aria-labelledby>
+          <Offcanvas.Header
+            closeButton
+            style={{ backgroundColor: 'var(--Tiffany-Blue)' }}
+          >
+            <Offcanvas.Title
+              style={{
+                color: 'var(--Feldgrau)',
+                fontSize: '30px',
+              }}
+            >
+              MB Masaulis
+            </Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body style={{ backgroundColor: 'var(--Feldgrau)' }}>
+            <Nav>
+              <NavLink className="nav-links" to="/">
+                Pagrindinis
+              </NavLink>
+              <NavLink className="nav-links" to="/paslaugos">
+                Paslaugos
+              </NavLink>
+              <NavLink className="nav-links" to="/galerija">
+                Galerija
+              </NavLink>
+              <NavLink className="nav-links" to="/apiemus">
+                Apie Mus
+              </NavLink>
+              <NavLink className="nav-links" to="/kontaktai">
+                Kontaktai
+              </NavLink>
+            </Nav>
+          </Offcanvas.Body>
+        </Navbar.Offcanvas>
       </Navbar>
     </>
   );
