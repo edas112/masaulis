@@ -7,7 +7,7 @@ function Admin() {
     <Form className="form container">
       <Form.Group className="mb-3" controlId="formBasic">
         <Form.Label>Prisijungimo vardas</Form.Label>
-        <Form.Control type="email" placeholder="Prisijungimo vardas" />
+        <Form.Control type="username" placeholder="Prisijungimo vardas" />
         <Form.Text className="text-muted">
           Įveskite prisijungimo vardą
         </Form.Text>
