@@ -11,8 +11,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { useState } from 'react';
 
 function Navigacija() {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <>
       <div className="nav-info">
@@ -44,8 +49,9 @@ function Navigacija() {
             color: 'var(--Light-green)',
             marginRight: '3rem',
           }}
+          onClick={handleShow}
         />
-        <Navbar.Offcanvas aria-labelledby>
+        <Navbar.Offcanvas show={show} onHide={handleClose} aria-labelledby>
           <Offcanvas.Header
             closeButton
             style={{ backgroundColor: 'var(--Tiffany-Blue)' }}
@@ -68,20 +74,39 @@ function Navigacija() {
             }}
           >
             <Nav>
-              <NavLink className="nav-links" to="/">
+              <NavLink className="nav-links" to="/" onClick={handleClose}>
                 Pagrindinis
               </NavLink>
-              <NavLink className="nav-links" to="/paslaugos">
+              <NavLink
+                className="nav-links"
+                to="/paslaugos"
+                onClick={handleClose}
+              >
                 Paslaugos
               </NavLink>
-              <NavLink className="nav-links" to="/galerija">
+              <NavLink
+                className="nav-links"
+                to="/galerija"
+                onClick={handleClose}
+              >
                 Galerija
               </NavLink>
-              <NavLink className="nav-links" to="/apiemus">
+              <NavLink
+                className="nav-links"
+                to="/apiemus"
+                onClick={handleClose}
+              >
                 Apie Mus
               </NavLink>
-              <NavLink className="nav-links" to="/kontaktai">
+              <NavLink
+                className="nav-links"
+                to="/kontaktai"
+                onClick={handleClose}
+              >
                 Kontaktai
+              </NavLink>
+              <NavLink className="nav-links" to="/admin">
+                admin
               </NavLink>
             </Nav>
           </Offcanvas.Body>

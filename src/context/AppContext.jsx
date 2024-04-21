@@ -1,30 +1,32 @@
 import { useState, createContext, useEffect } from 'react';
 
 import { cfg } from './AppContext';
+import Paslaugos from '../components/Paslaugos/Paslaugos';
 export const AppContext = createContext();
 export { cfg } from '../cfg/cfg';
 
 function AppContextProvider(props) {
-  const [loadingProduct, setLoadingProduct] = useState(true);
+  const [showLogin, setShowLogin] = useState(false);
+  const [loadingPaslaugos, setLoadingPaslaugos] = useState(true);
   const [data, setData] = useState([]);
   const [cardData, setCardData] = useState(
     JSON.parse(localStorage.getItem('cardData')) || []
   );
   const fetchData = async () => {
     try {
-      setLoadingProduct(true);
+      setLoadingPaslaugos(true);
       const response = await fetch(`${cfg.API.HOST}/paslaugos`);
       console.log('response', response);
-      const products = await response.json();
-      console.log('data', products);
-      const filteredData = products.filter(
+      const paslaugos = await response.json();
+      console.log('data', paslaugos);
+      const filteredData = paslaugos.filter(
         (item) => !cardData.some((cardItem) => cardItem.title === item.title)
       );
       setData(filteredData);
     } catch (error) {
       console.log(error);
     } finally {
-      setLoadingProduct(false);
+      setLoadingPaslaugos(false);
     }
   };
 
@@ -35,12 +37,14 @@ function AppContextProvider(props) {
   return (
     <AppContext.Provider
       value={{
-        loadingProduct,
+        loadingPaslaugos,
         data,
         setData,
         cardData,
         setCardData,
         fetchData,
+        showLogin,
+        setShowLogin,
       }}
     >
       {props.children}
