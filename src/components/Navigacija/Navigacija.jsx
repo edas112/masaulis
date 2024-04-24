@@ -105,9 +105,6 @@ function Navigacija() {
               >
                 Kontaktai
               </NavLink>
-              <NavLink className="nav-links" to="/admin">
-                admin
-              </NavLink>
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

@@ -1,11 +1,11 @@
 import './galerija.scss';
 
-import Titulinis from './Titulinis/Titulinis';
+import GalerijaTitulinis from './GalerijaTitulinis/Titulinis';
 
 function Galerija() {
   return (
     <>
-      <Titulinis />
+      <GalerijaTitulinis />
     </>
   );
 }

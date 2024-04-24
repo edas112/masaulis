@@ -1,128 +1,165 @@
 import { useState, useContext } from 'react';
-import Form from 'react-bootstrap/Form';
-import { Col, Row, Container, Button, Spinner, Alert } from 'react-bootstrap';
-import { cfg } from '../../cfg/cfg';
+import { Button, Spinner, Row, Col, Alert, Form } from 'react-bootstrap';
 import './admin.scss';
+import { cfg } from '../../cfg/cfg';
 import useAuth from '../../hooks/useAuth';
 import { AppContext } from '../../context/AppContext';
+import SukurtiPaslauga from './SukurtiPaslauga/SukurtiPaslauga';
 
 function Admin() {
-  const [luoding, setLouding] = useState(false);
-  const [validated, setValidate] = useState(false);
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [img, setImg] = useState('');
-  const [status, setStatus] = useState({
-    value: null,
-    message: '',
-  });
-  const { token, setToken } = useAuth();
-  const { fetchData, setShowLogin } = useContext(AppContext);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [validated, setValidated] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const { authToken, setAuthToken } = useAuth();
+  // const { showLogin, setShowLogin } = useContext(AppContext);
+
+  const handleClose = () => {
+    setShowLogin(false);
+    setValidated(false);
+    setUsername('');
+    setPassword('');
+  };
+
+  const handleShow = () => setShowLogin(true);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setValidate(true);
+    setValidated(true);
 
     const form = e.currentTarget;
+
     if (!form.checkValidity()) return;
 
-    console.log('created');
-
     try {
-      setLouding(true);
-      const data = {
-        title,
-        description,
-      };
+      setLoading(true);
+      if (error) setError(false);
 
-      if (img.trim()) data.img = img;
-
-      const response = await fetch(`${cfg.API.HOST}/paslaugos`, {
+      const response = await fetch(`${cfg.API.HOST}/user/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ username, password }),
       });
-      console.log(response);
-      const product = response.json();
 
-      if (!response.ok) {
-        if (response.status === 401) {
-          setToken(null);
-          setShowLogin(true);
-          alert('Prisijunkite');
-        }
+      if (!response.ok) throw new Error('Username or password incorrect');
 
-        throw new Error(product.error);
+      const user = await response.json();
+      console.log(user);
+      if (user.token) {
+        setAuthToken(user.token);
+        handleClose();
       }
-      setStatus({ value: 'sussecc', message: 'Paslauga sukurta' });
-      fetchData();
     } catch (error) {
-      console.log('eror', error.message);
-      setStatus({
-        value: 'danger',
-        message: error.message || 'Paslauga nesukurta',
-      });
+      console.log(error.message);
+      setError(true);
     } finally {
-      setLouding(false);
+      setLoading(false);
     }
   };
   return (
-    <div className="my-conteiner">
-      <h1>Pridėti paslaugą</h1>
-      <Container className="lygiavimas">
-        <Form noValidate validated={validated} onSubmit={handleSubmit}>
-          <Row>
-            <Form.Group as={Col} md="4" controlId="validationCustom01">
-              <Form.Label>Title</Form.Label>
-              <Form.Control
-                required
-                type="text"
-                placeholder="Title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-              <Form.Control.Feedback type="invalid">
-                Title is required
-              </Form.Control.Feedback>
-            </Form.Group>
-          </Row>
-          <Row>
-            <Form.Group as={Col} md="4" controlId="validationCustom02">
-              <Form.Label>Description</Form.Label>
-              <Form.Control
-                required
-                as="textarea"
-                placeholder="Description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-            </Form.Group>
-          </Row>
-          <Row>
-            <Form.Group as={Col} md="4" controlId="validationCustom03">
-              <Form.Label>Img</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Img"
-                value={img}
-                onChange={(e) => setImg(e.target.value)}
-              />
-              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-            </Form.Group>
-          </Row>
-          <Button type="submit" disabled={luoding}>
-            Create product
-          </Button>
-          {luoding && <Spinner animation="grow" variant="dark" />}
-        </Form>
-        {status.value && <Alert variant={status.value}>{status.message}</Alert>}
-      </Container>
-    </div>
+    <>
+      <div className="admin" onClick={() => setShowLogin(true)}>
+        login
+      </div>
+      {error && <Alert variant="danger">Username or password incorrect</Alert>}
+      <Form noValidate validated={validated} onSubmit={handleSubmit}>
+        <Row>
+          <Form.Group as={Col} controlId="validationCustom01">
+            <Form.Label>Username</Form.Label>
+            <Form.Control
+              required
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Username is required!
+            </Form.Control.Feedback>
+          </Form.Group>
+        </Row>
+        <Row style={{ marginTop: '1rem' }}>
+          <Form.Group as={Col} controlId="validationCustom02">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              required
+              type="password"
+              placeholder="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid">
+              Password is required!
+            </Form.Control.Feedback>
+          </Form.Group>
+        </Row>
+
+        <Button type="submit" disabled={loading}>
+          Login
+        </Button>
+        {loading && <Spinner animation="border" variant="primary" />}
+      </Form>
+    </>
+    //   <>
+    //     <div className="admin" style={{ display: showLogin ? 'block' : 'none' }}>
+    //       {token ? (
+    //         <>
+    //           <SukurtiPaslauga />
+    //         </>
+    //       ) : (
+    //         <>
+    //           <div>login</div>
+    //           {error && (
+    //             <Alert variant="danger">Username or password incorrect</Alert>
+    //           )}
+    //           <Form noValidate validated={validated} onSubmit={handleSubmit}>
+    //             <Row>
+    //               <Form.Group as={Col} controlId="validationCustom01">
+    //                 <Form.Label>Username</Form.Label>
+    //                 <Form.Control
+    //                   required
+    //                   type="text"
+    //                   placeholder="Username"
+    //                   value={username}
+    //                   onChange={(e) => setUsername(e.target.value)}
+    //                 />
+    //                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+    //                 <Form.Control.Feedback type="invalid">
+    //                   Username is required!
+    //                 </Form.Control.Feedback>
+    //               </Form.Group>
+    //             </Row>
+    //             <Row style={{ marginTop: '1rem' }}>
+    //               <Form.Group as={Col} controlId="validationCustom02">
+    //                 <Form.Label>Password</Form.Label>
+    //                 <Form.Control
+    //                   required
+    //                   type="password"
+    //                   placeholder="password"
+    //                   value={password}
+    //                   onChange={(e) => setPassword(e.target.value)}
+    //                 />
+    //                 <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+    //                 <Form.Control.Feedback type="invalid">
+    //                   Password is required!
+    //                 </Form.Control.Feedback>
+    //               </Form.Group>
+    //             </Row>
+
+    //             <Button type="submit" disabled={loading}>
+    //               Login
+    //             </Button>
+    //             {loading && <Spinner animation="border" variant="primary" />}
+    //           </Form>
+    //         </>
+    //       )}
+    //     </div>
+    //   </>
   );
 }
 

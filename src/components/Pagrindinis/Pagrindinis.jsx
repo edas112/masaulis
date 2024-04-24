@@ -1,7 +1,7 @@
 import './pagrindinis.scss';
 
-import Paslaugos from '../Paslaugos/Paslaugos.jsx';
-import Galerija from '../Galerija/Galerija.jsx';
+import PaslaugosTitulinis from '../Paslaugos/PaslaugosTitulinis/Titulinis.jsx';
+import GalerijaTitulinis from '../Galerija/GalerijaTitulinis/Titulinis.jsx';
 
 function Pagrindinis() {
   return (
@@ -18,8 +18,8 @@ function Pagrindinis() {
           pradžios iki pabaigos! Visų darbų kainos KONKURENCINGOS!!
         </p>
       </div>
-      <Paslaugos />
-      <Galerija />
+      <PaslaugosTitulinis />
+      <GalerijaTitulinis />
     </>
   );
 }

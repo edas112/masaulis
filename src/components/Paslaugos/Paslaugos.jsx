@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { AppContext } from '../../context/AppContext';
 
 import Kortele from './Kortele/Kortele';
-import Titulinis from './Titulinis/Titulinis';
+import Titulinis from './PaslaugosTitulinis/Titulinis';
 
 function Paslaugos() {
   const { data } = useContext(AppContext);
