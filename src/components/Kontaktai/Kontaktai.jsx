@@ -1,4 +1,4 @@
-import EmailLink from './Žemėlapis/Žemėlapis';
+import EmailLink from './EmailLink/EmailLink';
 
 function Kontaktai() {
   return (
@@ -7,7 +7,7 @@ function Kontaktai() {
       <div>
         <h1>Sveiki!</h1>
         <p>Spauskite mygtuką norėdami parašyti man laišką:</p>
-        <EmailLink email="mbmasaulis@gmail" />
+        <EmailLink email="mbmasaulis@gmail.com" />
       </div>
     </div>
   );
