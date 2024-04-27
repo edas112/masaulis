@@ -25,11 +25,11 @@ function Navigacija() {
           <FontAwesomeIcon icon={faFacebook} />
           <span>Facebook</span>
         </a>
-        <a href="">
+        <a href="tel:+37065796289">
           <FontAwesomeIcon icon={faMobileScreenButton} />
           <span>+37065796289</span>
         </a>
-        <a href="">
+        <a href="mailto:mbmasaulis@gmail.com">
           <FontAwesomeIcon icon={faEnvelope} />
           <span>mbmasaulis@gmail.com</span>
         </a>
