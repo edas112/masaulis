@@ -2,6 +2,7 @@ import './pagrindinis.scss';
 
 import PaslaugosTitulinis from '../Paslaugos/PaslaugosTitulinis/Titulinis.jsx';
 import GalerijaTitulinis from '../Galerija/GalerijaTitulinis/Titulinis.jsx';
+import EmailLink from '../Kontaktai/EmailLink/EmailLink.jsx';
 
 function Pagrindinis() {
   return (
@@ -20,6 +21,7 @@ function Pagrindinis() {
       </div>
       <PaslaugosTitulinis />
       <GalerijaTitulinis />
+      <EmailLink />
     </>
   );
 }

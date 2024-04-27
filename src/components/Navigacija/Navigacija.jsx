@@ -93,13 +93,6 @@ function Navigacija() {
               </NavLink>
               <NavLink
                 className="nav-links"
-                to="/apiemus"
-                onClick={handleClose}
-              >
-                Apie Mus
-              </NavLink>
-              <NavLink
-                className="nav-links"
                 to="/kontaktai"
                 onClick={handleClose}
               >
