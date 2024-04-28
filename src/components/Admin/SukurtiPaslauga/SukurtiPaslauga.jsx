@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Col, Row, Container, Button, Spinner, Alert } from 'react-bootstrap';
 import { cfg } from '../../../cfg/cfg';
-import '../admin.scss';
+import './sukurtiPaslauga.scss';
 import useAuth from '../../../hooks/useAuth';
 import { AppContext } from '../../../context/AppContext';
 
@@ -52,7 +52,7 @@ function SukurtiPaslauga() {
         if (response.status === 401) {
           setToken(null);
           setShowLogin(true);
-          alert('Prisijunkite');
+          alert('Please login');
         }
 
         throw new Error(product.error);
@@ -63,70 +63,66 @@ function SukurtiPaslauga() {
       console.log('eror', error.message);
       setStatus({
         value: 'danger',
-        message: error.message || 'Paslauga nesukurta',
+        message: error.message || 'Paslauga neukurta',
       });
     } finally {
       setLouding(false);
     }
   };
   return (
-    <>
-      <div className="container">
-        <h1>Pridėti paslaugą</h1>
-        <Container className="lygiavimas">
-          <Form noValidate validated={validated}>
-            <Row>
-              <Form.Group as={Col} md="4" controlId="validationCustom01">
-                <Form.Label>Paslauga</Form.Label>
-                <Form.Control
-                  required
-                  type="text"
-                  placeholder="Paslauga"
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
-                />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                <Form.Control.Feedback type="invalid">
-                  Title is required
-                </Form.Control.Feedback>
-              </Form.Group>
-            </Row>
-            <Row>
-              <Form.Group as={Col} md="4" controlId="validationCustom02">
-                <Form.Label>Aprašymas</Form.Label>
-                <Form.Control
-                  required
-                  as="textarea"
-                  placeholder="Aprašymas"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-              </Form.Group>
-            </Row>
-            <Row>
-              <Form.Group as={Col} md="4" controlId="validationCustom03">
-                <Form.Label>Nuotrauka</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Nuotrauka"
-                  value={img}
-                  onChange={(e) => setImg(e.target.value)}
-                />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-              </Form.Group>
-            </Row>
-            <Button type="submit" disabled={luoding}>
-              Sukurti paslauga
-            </Button>
-            {luoding && <Spinner animation="grow" variant="dark" />}
-          </Form>
-          {status.value && (
-            <Alert variant={status.value}>{status.message}</Alert>
-          )}
-        </Container>
-      </div>
-    </>
+    <div className="my-conteiner">
+      <h1>Add product</h1>
+      <Container className="lygiavimas">
+        <Form noValidate validated={validated} onSubmit={handleSubmit}>
+          <Row>
+            <Form.Group as={Col} md="4" controlId="validationCustom01">
+              <Form.Label>Title</Form.Label>
+              <Form.Control
+                required
+                type="text"
+                placeholder="Title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+              />
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                Title is required
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Row>
+          <Row>
+            <Form.Group as={Col} md="4" controlId="validationCustom02">
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                required
+                as="textarea"
+                placeholder="Description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
+          </Row>
+          <Row>
+            <Form.Group as={Col} md="4" controlId="validationCustom03">
+              <Form.Label>Img</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Img"
+                value={img}
+                onChange={(e) => setImg(e.target.value)}
+              />
+              <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+            </Form.Group>
+          </Row>
+          <Button type="submit" disabled={luoding}>
+            Create product
+          </Button>
+          {luoding && <Spinner animation="grow" variant="dark" />}
+        </Form>
+        {status.value && <Alert variant={status.value}>{status.message}</Alert>}
+      </Container>
+    </div>
   );
 }
 

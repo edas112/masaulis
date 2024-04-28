@@ -1,7 +1,7 @@
 import { useState, createContext, useEffect } from 'react';
 
 import { cfg } from './AppContext';
-import Paslaugos from '../components/Paslaugos/Paslaugos';
+
 export const AppContext = createContext();
 export { cfg } from '../cfg/cfg';
 
@@ -10,14 +10,12 @@ function AppContextProvider(props) {
   const [footerData, setFooterData] = useState(true);
   const [loadingPaslaugos, setLoadingPaslaugos] = useState(true);
   const [loadingFooterData, setLoadingFooterData] = useState(true);
-  const [data, setData] = useState(
-    JSON.parse(localStorage.getItem('cardData')) || []
-  );
+  const [data, setData] = useState([]);
 
   const fetchData = async () => {
     try {
       setLoadingPaslaugos(true);
-      const response = await fetch(`${cfg.API.HOST}/paslaugos`);
+      const response = await fetch(`${cfg.API.HOST}/kortele`);
       console.log('response', response);
       const paslaugos = await response.json();
       console.log('data', paslaugos);
@@ -56,6 +54,10 @@ function AppContextProvider(props) {
   useEffect(() => {
     fetchFooterData();
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem('data', JSON.stringify(data));
+  }, [data]);
 
   function getCurrentDateTime() {
     const currentDate = new Date();
