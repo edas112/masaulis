@@ -15,7 +15,7 @@ function AppContextProvider(props) {
   const fetchData = async () => {
     try {
       setLoadingPaslaugos(true);
-      const response = await fetch(`${cfg.API.HOST}/paslaugos`);
+      const response = await fetch(`${cfg.API.HOST}/kortele`);
       console.log('response', response);
       const paslaugos = await response.json();
       console.log('data', paslaugos);
