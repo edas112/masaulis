@@ -2,11 +2,11 @@ import { useState, useContext } from 'react';
 import Form from 'react-bootstrap/Form';
 import { Col, Row, Container, Button, Spinner, Alert } from 'react-bootstrap';
 import { cfg } from '../../../cfg/cfg';
-import './sukurtiPaslauga.scss';
+import './footeris.scss';
 import useAuth from '../../../hooks/useAuth';
 import { AppContext } from '../../../context/AppContext';
 
-function SukurtiPaslauga() {
+function Footeris() {
   const [luoding, setLouding] = useState(false);
   const [validated, setValidate] = useState(false);
   const [title, setTitle] = useState('');
@@ -26,7 +26,7 @@ function SukurtiPaslauga() {
     const form = e.currentTarget;
     if (!form.checkValidity()) return;
 
-    console.log('created');
+    console.log('Pakeistas');
 
     try {
       setLouding(true);
@@ -37,7 +37,7 @@ function SukurtiPaslauga() {
 
       if (img.trim()) data.img = img;
 
-      const response = await fetch(`${cfg.API.HOST}/kortele`, {
+      const response = await fetch(`${cfg.API.HOST}/footer`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -70,13 +70,13 @@ function SukurtiPaslauga() {
     }
   };
   return (
-    <div className="container paslauga">
-      <h1>Pridėti paslauga</h1>
+    <div className="container footeris">
+      <h1>Pakeisti Footerio duomenis</h1>
       <Container className="lygiavimas">
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row>
             <Form.Group as={Col} md="4" controlId="validationCustom01">
-              <Form.Label>Paslaugos pavadinimas</Form.Label>
+              <Form.Label>Įmonės pavadinimas</Form.Label>
               <Form.Control
                 required
                 type="text"
@@ -91,32 +91,53 @@ function SukurtiPaslauga() {
             </Form.Group>
           </Row>
           <Row>
-            <Form.Group as={Col} md="4" controlId="validationCustom02">
-              <Form.Label>Paslaugos aprašymas</Form.Label>
+            <Form.Group as={Col} md="4" controlId="validationCustom01">
+              <Form.Label>Telefono numeris</Form.Label>
               <Form.Control
                 required
-                as="textarea"
-                placeholder="aprašymas"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+                type="text"
+                placeholder="numeris"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
               />
               <Form.Control.Feedback>Gerai!</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                Telefono numeris būtinas
+              </Form.Control.Feedback>
             </Form.Group>
           </Row>
           <Row>
             <Form.Group as={Col} md="4" controlId="validationCustom03">
-              <Form.Label>Paslaugos nuotrauka</Form.Label>
+              <Form.Label>El. pašto adresas</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="nuotrauka"
+                placeholder="el. pašto adresas"
                 value={img}
                 onChange={(e) => setImg(e.target.value)}
               />
               <Form.Control.Feedback>Gerai!</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                El. pašto adresas būtinas
+              </Form.Control.Feedback>
+            </Form.Group>
+          </Row>
+          <Row>
+            <Form.Group as={Col} md="4" controlId="validationCustom04">
+              <Form.Label>Įmonės adresas</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="adresas"
+                value={img}
+                onChange={(e) => setImg(e.target.value)}
+              />
+              <Form.Control.Feedback>Gerai!</Form.Control.Feedback>
+              <Form.Control.Feedback type="invalid">
+                Adresas būtinas
+              </Form.Control.Feedback>
             </Form.Group>
           </Row>
           <Button type="submit" disabled={luoding}>
-            Sukurti Paslaugą
+            Pakeisti Footerio duomenis
           </Button>
           {luoding && <Spinner animation="grow" variant="dark" />}
         </Form>
@@ -126,4 +147,4 @@ function SukurtiPaslauga() {
   );
 }
 
-export default SukurtiPaslauga;
+export default Footeris;

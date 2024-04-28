@@ -42,8 +42,7 @@ function EmailLink() {
 
   return (
     <div className="email-link container">
-      <h2>Kontaktai</h2>
-      <h2>Paslaugų užsakymas</h2>
+      <h1>Susisiekite</h1>
       <form className="form" onSubmit={handleSubmit}>
         Vardas
         <input

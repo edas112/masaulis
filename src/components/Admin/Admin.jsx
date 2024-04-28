@@ -13,7 +13,9 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { cfg } from '../../cfg/cfg';
 import useAuth from '../../hooks/useAuth';
 import { AppContext } from '../../context/AppContext';
-import SukurtiPaslauga from './SukurtiPaslauga/SukurtiPaslauga';
+import SukurtiPaslauga from '../Admin/SukurtiPaslauga/SukurtiPaslauga';
+import Footeris from '../Admin/Footeris/Footeris';
+import './admin.scss';
 
 function AdminUser() {
   const [loading, setLoading] = useState(false);
@@ -69,16 +71,21 @@ function AdminUser() {
 
   return (
     <>
-      <div className="user" onClick={handleShow}>
+      <div className="user container" onClick={handleShow}>
+        <h3>Masaulis</h3>
         <FontAwesomeIcon icon={faUser} />
+      </div>
+      <div>
+        <SukurtiPaslauga />
+        <Footeris />
       </div>
       <Offcanvas show={showLogin} onHide={handleClose} placement="end">
         {token ? (
           <>
-            <div className="user" onClick={handleShow}>
-              <FontAwesomeIcon icon={faUser} />
-              <SukurtiPaslauga />
-            </div>
+            <Offcanvas.Header closeButton closeVariant="white">
+              <Offcanvas.Title>Welcom admin</Offcanvas.Title>
+            </Offcanvas.Header>
+            <Offcanvas.Body>Jus galite sukurti nauja produkta</Offcanvas.Body>
           </>
         ) : (
           <>

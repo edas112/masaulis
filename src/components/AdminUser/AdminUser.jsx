@@ -68,67 +68,61 @@ function AdminUser() {
 
   return (
     <>
-      <div className="user" onClick={handleShow}></div>
-      <Offcanvas show={showLogin} onHide={handleClose} placement="end">
+     <div>
+       {error && <Alert variant="danger">Username or password incorrect</Alert>}
+        <Form
+        show={showLogin}
+        noValidate
+        validated={validated}
+        onSubmit={handleSubmit}
+        ></Form>
         {token ? (
           <>
-            <Offcanvas.Header closeButton closeVariant="white">
-              <Offcanvas.Title>Welcom admin</Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>Jus galite sukurti nauja produkta</Offcanvas.Body>
+            <SukurtiPaslauga />
           </>
         ) : (
           <>
-            <Offcanvas.Header closeButton closeVariant="white">
-              <Offcanvas.Title>Login</Offcanvas.Title>
-            </Offcanvas.Header>
-            <Offcanvas.Body>
-              {error && (
-                <Alert variant="danger">Username or password incorrect</Alert>
-              )}
-              <Form noValidate validated={validated} onSubmit={handleSubmit}>
-                <Row>
-                  <Form.Group as={Col} controlId="validationCustom01">
-                    <Form.Label>Username</Form.Label>
-                    <Form.Control
-                      required
-                      type="text"
-                      placeholder="Username"
-                      value={username}
-                      onChange={(e) => setUsername(e.target.value)}
-                    />
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    <Form.Control.Feedback type="invalid">
-                      Username is required!
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                </Row>
-                <Row style={{ marginTop: '1rem' }}>
-                  <Form.Group as={Col} controlId="validationCustom02">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                      required
-                      type="password"
-                      placeholder="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    <Form.Control.Feedback type="invalid">
-                      Password is required!
-                    </Form.Control.Feedback>
-                  </Form.Group>
-                </Row>
+            <Row>
+              <Form.Group as={Col} controlId="validationCustom01">
+                <Form.Label>Username</Form.Label>
+                <Form.Control
+                  required
+                  type="text"
+                  placeholder="Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Username is required!
+                </Form.Control.Feedback>
+              </Form.Group>
+            </Row>
+            <Row style={{ marginTop: '1rem' }}>
+              <Form.Group as={Col} controlId="validationCustom02">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  required
+                  type="password"
+                  placeholder="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                <Form.Control.Feedback type="invalid">
+                  Password is required!
+                </Form.Control.Feedback>
+              </Form.Group>
+            </Row>
 
-                <Button type="submit" disabled={loading}>
-                  Login
-                </Button>
-                {loading && <Spinner animation="border" variant="primary" />}
-              </Form>
-            </Offcanvas.Body>
+            <Button type="submit" disabled={loading}>
+              Login
+            </Button>
+            {loading && <Spinner animation="border" variant="primary" />}
           </>
         )}
-      </Offcanvas>
+        </Form>
+      </div>
     </>
   );
 }
