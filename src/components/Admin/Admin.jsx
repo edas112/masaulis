@@ -82,15 +82,35 @@ function AdminUser() {
       <Offcanvas show={showLogin} onHide={handleClose} placement="end">
         {token ? (
           <>
-            <Offcanvas.Header closeButton closeVariant="white">
-              <Offcanvas.Title>Welcom admin</Offcanvas.Title>
+            <Offcanvas.Header
+              closeButton
+              style={{ backgroundColor: 'var(--Feldgrau)' }}
+              color="var(--Tiffany-Blue)"
+            >
+              <Offcanvas.Title
+                style={{
+                  color: 'var(--Tiffany-Blue)',
+                  fontSize: '30px',
+                }}
+              >
+                Prisijungėte
+              </Offcanvas.Title>
             </Offcanvas.Header>
-            <Offcanvas.Body>Jus galite sukurti nauja produkta</Offcanvas.Body>
+            <Offcanvas.Body style={{ backgroundColor: 'var(--Tiffany-Blue)' }}>
+              Galite redaguoti sveitainės tūrynį
+            </Offcanvas.Body>
           </>
         ) : (
           <>
-            <Offcanvas.Header closeButton closeVariant="white">
-              <Offcanvas.Title>Login</Offcanvas.Title>
+            <Offcanvas.Header closeButton>
+              <Offcanvas.Title
+                style={{
+                  color: 'var(--Feldgrau)',
+                  fontSize: '30px',
+                }}
+              >
+                Login
+              </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
               {error && (

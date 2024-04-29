@@ -16,6 +16,17 @@ function EmailLink() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.message
+    ) {
+      alert('Visi laukai turi būti užpildyti!');
+      return;
+    }
+
     emailjs
       .sendForm(
         'service_s2xz8o2',
@@ -59,6 +70,7 @@ function EmailLink() {
           placeholder="El. paštas"
           value={formData.email}
           onChange={handleChange}
+          required
         />
         Telefono numeris
         <input
@@ -67,6 +79,7 @@ function EmailLink() {
           placeholder="Telefono numeris"
           value={formData.phone}
           onChange={handleChange}
+          required
         />
         Jūsų pranešimas
         <textarea
@@ -74,6 +87,7 @@ function EmailLink() {
           placeholder="Jūsų pranešimas"
           value={formData.message}
           onChange={handleChange}
+          required
         ></textarea>
         <button type="submit">Siųsti</button>
       </form>
