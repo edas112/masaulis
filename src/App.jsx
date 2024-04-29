@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Navigacija from './components/Navigacija/Navigacija';
 import Pagrindinis from './components/Pagrindinis/Pagrindinis';
@@ -14,16 +14,14 @@ function App() {
   return (
     <>
       <Navigacija />
-      <Router>
-        <Switch>
-          <Route path="/" element={<Pagrindinis />} />
-          <Route path="/paslaugos" element={<Paslaugos />} />
-          <Route path="/galerija" element={<Galerija />} />
-          <Route path="/kontaktai" element={<Kontaktai />} />
-          <Route path="/admin" element={<Admin />} />
-          {/* {token && <Route path="/admin" element={<Admin />} />} */}
-        </Switch>
-      </Router>
+      <Routes>
+        <Route path="/" element={<Pagrindinis />} />
+        <Route path="/paslaugos" element={<Paslaugos />} />
+        <Route path="/galerija" element={<Galerija />} />
+        <Route path="/kontaktai" element={<Kontaktai />} />
+        <Route path="/admin" element={<Admin />} />
+        {/* {token && <Route path="/admin" element={<Admin />} />} */}
+      </Routes>
       <Footer />
     </>
   );
