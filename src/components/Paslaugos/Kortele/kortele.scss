@@ -1,6 +1,8 @@
+@use '../../../assets/style/mixins' as *;
+
 .kortele {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   align-items: center;
 
   margin-top: 1rem;
@@ -8,5 +10,25 @@
   background-color: var(--Tiffany-Blue);
   width: 100%;
   height: auto;
-  border-top: solid 10px var(--Feldgrau);
+  border-top: solid 15px var(--Feldgrau);
+
+  img {
+    width: 300px;
+    height: 200px;
+  }
+
+  p {
+    font-size: 20px;
+    @include mobile {
+      font-size: 15px;
+    }
+  }
+
+  h3 {
+    font-size: 30px;
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
 }

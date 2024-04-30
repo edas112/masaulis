@@ -102,50 +102,47 @@ function AdminUser() {
           </>
         ) : (
           <>
-            <Offcanvas.Header closeButton>
-              <Offcanvas.Title
-                style={{
-                  color: 'var(--Feldgrau)',
-                  fontSize: '30px',
-                }}
-              >
-                Login
-              </Offcanvas.Title>
+            <Offcanvas.Header
+              style={{ backgroundColor: 'var(--Feldgrau)' }}
+              color="var(--Tiffany-Blue)"
+              closeButton
+            >
+              <Offcanvas.Title>Prisijunkite</Offcanvas.Title>
             </Offcanvas.Header>
-            <Offcanvas.Body>
+            <Offcanvas.Body style={{ backgroundColor: 'var(--Tiffany-Blue)' }}>
               {error && (
-                <Alert variant="danger">Username or password incorrect</Alert>
+                <Alert variant="danger">Jūsų vartotojas neegzistuoja</Alert>
               )}
               <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 <Row>
                   <Form.Group as={Col} controlId="validationCustom01">
-                    <Form.Label>Username</Form.Label>
+                    <Form.Label>Vartotojo vardas</Form.Label>
                     <Form.Control
                       required
                       type="text"
-                      placeholder="Username"
+                      placeholder="vartotojo vardas"
                       value={username}
                       onChange={(e) => setUsername(e.target.value)}
                     />
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                    <Form.Control.Feedback>Gerai!</Form.Control.Feedback>
                     <Form.Control.Feedback type="invalid">
-                      Username is required!
+                      Vartotojo vardas yra privalomas
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Row>
                 <Row style={{ marginTop: '1rem' }}>
                   <Form.Group as={Col} controlId="validationCustom02">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>Slaptažodis</Form.Label>
                     <Form.Control
                       required
                       type="password"
-                      placeholder="password"
+                      placeholder="slaptažodis"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                     />
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                    <Form.Control.Feedback>Gerai!</Form.Control.Feedback>
                     <Form.Control.Feedback type="invalid">
-                      Password is required!
+                      Slaptažodis yra privalomas!
                     </Form.Control.Feedback>
                   </Form.Group>
                 </Row>

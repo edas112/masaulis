@@ -10,7 +10,7 @@ function Footeris() {
   const [luoding, setLouding] = useState(false);
   const [validated, setValidate] = useState(false);
   const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  const [description] = useState('');
   const [img, setImg] = useState('');
   const [status, setStatus] = useState({
     value: null,

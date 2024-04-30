@@ -17,16 +17,6 @@ function EmailLink() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.phone ||
-      !formData.message
-    ) {
-      alert('Visi laukai turi būti užpildyti!');
-      return;
-    }
-
     emailjs
       .sendForm(
         'service_s2xz8o2',
@@ -36,6 +26,15 @@ function EmailLink() {
       )
       .then(
         (result) => {
+          if (
+            !formData.name ||
+            !formData.email ||
+            !formData.phone ||
+            !formData.message
+          ) {
+            alert('Visi laukai turi būti užpildyti!');
+            return;
+          }
           console.log(result.text);
           const { name, email, phone, message } = e.target.elements;
           name.value = '';
@@ -62,6 +61,7 @@ function EmailLink() {
           placeholder="Vardas"
           value={formData.firstName}
           onChange={handleChange}
+          required
         />
         El. paštas
         <input
