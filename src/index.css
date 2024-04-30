@@ -1,4 +1,4 @@
 body {
   background: var(--Keppel) !important;
-  font-family: 'Platypi, sans-serif';
+  font-family: 'Platypi, sans-serif' !important;
 }
