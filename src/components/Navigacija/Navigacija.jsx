@@ -43,12 +43,12 @@ function Navigacija() {
           <h1 className="logo">Masaulis.lt</h1>
         </Navbar.Brand>
         <Navbar.Toggle
+          className="nav-toggle"
           aria-controls="basic-navbar-nav"
           style={{
             backgroundColor: 'var(--Tiffany-Blue)',
             color: 'var(--Light-green)',
             marginRight: '3rem',
-            width: '70px !important',
           }}
           onClick={handleShow}
         />
