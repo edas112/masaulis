@@ -115,7 +115,7 @@ function SukurtiPaslauga() {
               <Form.Control.Feedback>Gerai!</Form.Control.Feedback>
             </Form.Group>
           </Row>
-          <Button type="submit" disabled={luoding}>
+          <Button className="btn" type="submit" disabled={luoding}>
             Sukurti Paslaugą
           </Button>
           {luoding && <Spinner animation="grow" variant="dark" />}
