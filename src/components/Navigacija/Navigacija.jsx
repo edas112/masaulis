@@ -48,7 +48,7 @@ function Navigacija() {
             backgroundColor: 'var(--Tiffany-Blue)',
             color: 'var(--Light-green)',
             marginRight: '3rem',
-            width: '70px',
+            width: '70px !important',
           }}
           onClick={handleShow}
         />
