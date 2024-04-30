@@ -12,16 +12,16 @@ import Img9 from '../../../assets/img/321449442_561094922698582_3081856111906249
 function Titulinis() {
   return (
     <div>
-      <Carousel className="container galerija">
+      <Carousel className="container titulinis">
         <Carousel.Item>
           <img
-            className="container"
+            className="container img"
             src={Img}
             alt="First slide"
             style={{ width: '33%' }}
           />
           <img
-            className="container"
+            className="container "
             src={Img2}
             alt="Second slide"
             style={{ width: '33%' }}

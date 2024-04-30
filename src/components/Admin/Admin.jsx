@@ -147,7 +147,7 @@ function AdminUser() {
                   </Form.Group>
                 </Row>
 
-                <Button type="submit" disabled={loading}>
+                <Button className='btn' type="submit" disabled={loading}>
                   Login
                 </Button>
                 {loading && <Spinner animation="border" variant="primary" />}
