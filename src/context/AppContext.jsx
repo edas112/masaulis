@@ -59,6 +59,10 @@ function AppContextProvider(props) {
     localStorage.setItem('data', JSON.stringify(data));
   }, [data]);
 
+  useEffect(() => {
+    localStorage.setItem('footerData', JSON.stringify(footerData));
+  }, [footerData]);
+
   function getCurrentDateTime() {
     const currentDate = new Date();
     const options = {

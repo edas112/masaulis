@@ -10,8 +10,9 @@ function Footeris() {
   const [luoding, setLouding] = useState(false);
   const [validated, setValidate] = useState(false);
   const [title, setTitle] = useState('');
-  const [description] = useState('');
-  const [img, setImg] = useState('');
+  const [number, setNumber] = useState('');
+  const [email, setEmail] = useState('');
+  const [adres, setAdres] = useState('');
   const [status, setStatus] = useState({
     value: null,
     message: '',
@@ -26,25 +27,26 @@ function Footeris() {
     const form = e.currentTarget;
     if (!form.checkValidity()) return;
 
-    console.log('Pakeistas');
-
     try {
       setLouding(true);
       const data = {
         title,
-        description,
+        number,
+        email,
+        adres,
       };
 
-      if (img.trim()) data.img = img;
-
-      const response = await fetch(`${cfg.API.HOST}/footer`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `${cfg.API.HOST}/footer/66295e97b6844bcb60e2b1b2`,
+        {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(data),
+        }
+      );
       console.log(response);
       const product = response.json();
 
@@ -52,18 +54,18 @@ function Footeris() {
         if (response.status === 401) {
           setToken(null);
           setShowLogin(true);
-          alert('Please login');
+          alert('Prisijunkite');
         }
 
         throw new Error(product.error);
       }
-      setStatus({ value: 'sussecc', message: 'Paslauga sukurta' });
+      setStatus({ value: 'Pavyko', message: 'Footeris redaguotas' });
       fetchData();
     } catch (error) {
       console.log('eror', error.message);
       setStatus({
         value: 'danger',
-        message: error.message || 'Paslauga neukurta',
+        message: error.message || 'Redaguoti nepavyko',
       });
     } finally {
       setLouding(false);
@@ -91,14 +93,14 @@ function Footeris() {
             </Form.Group>
           </Row>
           <Row>
-            <Form.Group as={Col} md="4" controlId="validationCustom01">
+            <Form.Group as={Col} md="4" controlId="validationCustom02">
               <Form.Label>Telefono numeris</Form.Label>
               <Form.Control
                 required
                 type="text"
                 placeholder="numeris"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                value={number}
+                onChange={(e) => setNumber(e.target.value)}
               />
               <Form.Control.Feedback>Gerai!</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
@@ -112,8 +114,8 @@ function Footeris() {
               <Form.Control
                 type="text"
                 placeholder="el. pašto adresas"
-                value={img}
-                onChange={(e) => setImg(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <Form.Control.Feedback>Gerai!</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">
@@ -127,8 +129,8 @@ function Footeris() {
               <Form.Control
                 type="text"
                 placeholder="adresas"
-                value={img}
-                onChange={(e) => setImg(e.target.value)}
+                value={adres}
+                onChange={(e) => setAdres(e.target.value)}
               />
               <Form.Control.Feedback>Gerai!</Form.Control.Feedback>
               <Form.Control.Feedback type="invalid">

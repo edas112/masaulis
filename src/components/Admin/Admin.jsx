@@ -53,7 +53,8 @@ function AdminUser() {
         body: JSON.stringify({ username, password }),
       });
 
-      if (!response.ok) throw new Error('Username or password incorrect');
+      if (!response.ok)
+        throw new Error('Vartotojo vardas arba slaptazodis neteisingi');
 
       const user = await response.json();
       console.log(user);
@@ -147,8 +148,8 @@ function AdminUser() {
                   </Form.Group>
                 </Row>
 
-                <Button className='btn' type="submit" disabled={loading}>
-                  Login
+                <Button className="btn" type="submit" disabled={loading}>
+                  Prisijungti
                 </Button>
                 {loading && <Spinner animation="border" variant="primary" />}
               </Form>

@@ -33,7 +33,7 @@ function Navigacija() {
           <FontAwesomeIcon icon={faEnvelope} />
           <span>mbmasaulis@gmail.com</span>
         </a>
-        <a href="">
+        <a href="https://masaulis.netlify.app/">
           <FontAwesomeIcon icon={faHouse} />
           <span>MB Masaulis</span>
         </a>
