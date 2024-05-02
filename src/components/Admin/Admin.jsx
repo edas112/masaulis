@@ -148,7 +148,7 @@ function AdminUser() {
                   </Form.Group>
                 </Row>
 
-                <Button className="btn" type="submit" disabled={loading}>
+                <Button type="submit" disabled={loading}>
                   Prisijungti
                 </Button>
                 {loading && <Spinner animation="border" variant="primary" />}

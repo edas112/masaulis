@@ -21,13 +21,13 @@ function Titulinis() {
             style={{ width: '33%' }}
           />
           <img
-            className="container "
+            className="container img "
             src={Img2}
             alt="Second slide"
             style={{ width: '33%' }}
           />
           <img
-            className="container"
+            className="container img"
             src={Img3}
             alt="Third slide"
             style={{ width: '33%' }}
@@ -39,19 +39,19 @@ function Titulinis() {
 
         <Carousel.Item>
           <img
-            className="container"
+            className="container img"
             src={Img4}
             alt="First slide"
             style={{ width: '33%' }}
           />
           <img
-            className="container"
+            className="container img"
             src={Img5}
             alt="Second slide"
             style={{ width: '33%' }}
           />
           <img
-            className="container"
+            className="container  img"
             src={Img6}
             alt="Third slide"
             style={{ width: '33%' }}
@@ -62,19 +62,19 @@ function Titulinis() {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="container"
+            className="container img"
             src={Img7}
             alt="First slide"
             style={{ width: '33%' }}
           />
           <img
-            className="container"
+            className="container img"
             src={Img8}
             alt="Second slide"
             style={{ width: '33%' }}
           />
           <img
-            className="container"
+            className="container img"
             src={Img9}
             alt="Third slide"
             style={{ width: '33%' }}

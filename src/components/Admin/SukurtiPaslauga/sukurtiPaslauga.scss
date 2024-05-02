@@ -7,19 +7,4 @@
   height: auto;
   padding-top: 1rem;
   padding-bottom: 1rem;
-
-  .btn {
-    width: 150px;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    background-color: var(--Feldgrau) !important;
-
-    color: var(--Tiffany-Blue) !important;
-    border-radius: 5px;
-    border-color: var(--Tiffany-Blue) !important;
-
-    &:hover {
-      background-color: var(--Viridian) !important;
-    }
-  }
 }
