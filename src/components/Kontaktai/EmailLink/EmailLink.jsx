@@ -82,14 +82,14 @@ function EmailLink() {
           required
         />
         Jūsų pranešimas
-        <input
-          type="textarea"
+        <textarea
+          type="text"
           name="message"
           placeholder="Jūsų pranešimas"
           value={formData.message}
           onChange={handleChange}
           required
-        ></input>
+        ></textarea>
         <button type="submit">Siųsti</button>
       </form>
     </div>
