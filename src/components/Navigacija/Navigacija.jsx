@@ -12,6 +12,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useState } from 'react';
+import Logo from './Logo/Logo';
 
 function Navigacija() {
   const [show, setShow] = useState(false);
@@ -40,7 +41,9 @@ function Navigacija() {
       </div>
       <Navbar expand="lg" className="nav">
         <Navbar.Brand>
-          <h1 className="logo">Masaulis.lt</h1>
+          <h1 className="logo">
+            <Logo />
+          </h1>
         </Navbar.Brand>
         <Navbar.Toggle
           className="nav-toggle"

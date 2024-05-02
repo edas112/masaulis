@@ -18,19 +18,19 @@ function Titulinis() {
             className="container img"
             src={Img}
             alt="First slide"
-            style={{ width: '33%' }}
+            style={{ width: '33%', borderRadius: '25px' }}
           />
           <img
             className="container img "
             src={Img2}
             alt="Second slide"
-            style={{ width: '33%' }}
+            style={{ width: '33%', borderRadius: '25px' }}
           />
           <img
             className="container img"
             src={Img3}
             alt="Third slide"
-            style={{ width: '33%' }}
+            style={{ width: '33%', borderRadius: '25px' }}
           />
           <Carousel.Caption>
             <h3></h3>
@@ -42,19 +42,19 @@ function Titulinis() {
             className="container img"
             src={Img4}
             alt="First slide"
-            style={{ width: '33%' }}
+            style={{ width: '33%', borderRadius: '25px' }}
           />
           <img
             className="container img"
             src={Img5}
             alt="Second slide"
-            style={{ width: '33%' }}
+            style={{ width: '33%', borderRadius: '25px' }}
           />
           <img
             className="container  img"
             src={Img6}
             alt="Third slide"
-            style={{ width: '33%' }}
+            style={{ width: '33%', borderRadius: '25px' }}
           />
           <Carousel.Caption>
             <h3></h3>
@@ -65,19 +65,19 @@ function Titulinis() {
             className="container img"
             src={Img7}
             alt="First slide"
-            style={{ width: '33%' }}
+            style={{ width: '33%', borderRadius: '25px' }}
           />
           <img
             className="container img"
             src={Img8}
             alt="Second slide"
-            style={{ width: '33%' }}
+            style={{ width: '33%', borderRadius: '25px' }}
           />
           <img
             className="container img"
             src={Img9}
             alt="Third slide"
-            style={{ width: '33%' }}
+            style={{ width: '33%', borderRadius: '25px' }}
           />
           <Carousel.Caption>
             <h3></h3>
