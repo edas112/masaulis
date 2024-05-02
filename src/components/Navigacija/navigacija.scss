@@ -38,14 +38,6 @@
 
   margin-top: 1rem;
   color: var(--Tiffany-Blue);
-
-  @include tablet {
-    width: 100%;
-  }
-
-  @include mobile {
-    width: 100%;
-  }
 }
 
 .nav-links {
@@ -83,7 +75,6 @@
 }
 
 .logo {
-  position: relative;
   margin-left: 3rem;
 
   color: var(--Tiffany-Blue);
@@ -96,12 +87,8 @@
   font-family: 'Platypi, sans-serif';
 
   @include mobile {
-    margin-left: 1rem;
+    margin-left: 2rem;
 
     width: 100%;
   }
-}
-
-.nav-toggle {
-  width: auto;
 }
