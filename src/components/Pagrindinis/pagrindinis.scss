@@ -24,18 +24,13 @@
   }
   p {
     margin-top: 1rem;
-    width: 60%;
+    width: 75%;
     font-size: 27px;
     font-weight: 300;
 
     text-align: justify;
 
-    @include tablet {
-      width: 100%;
-    }
-
     @include mobile {
-      width: 100%;
       font-size: 15px;
     }
   }
