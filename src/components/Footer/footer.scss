@@ -26,3 +26,23 @@
     padding-bottom: 1rem;
   }
 }
+
+.footer-kraunasi {
+  border: 4px solid #9ffcdf;
+  border-top: 4px solid #47624f;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+  position: relative;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

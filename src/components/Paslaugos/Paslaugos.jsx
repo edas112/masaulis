@@ -6,12 +6,13 @@ import Kortele from './Kortele/Kortele';
 import Titulinis from './PaslaugosTitulinis/Titulinis';
 
 function Paslaugos() {
-  const { data } = useContext(AppContext);
+  const { data, loadingPaslaugos } = useContext(AppContext);
 
   return (
     <>
       <Titulinis />
       <div className="korteles container">
+        {loadingPaslaugos && !data.length && <h2 className="kraunasi"></h2>}
         {data.map((item) => {
           return (
             <Kortele
