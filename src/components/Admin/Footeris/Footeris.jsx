@@ -141,7 +141,7 @@ function Footeris() {
           <Button type="submit" disabled={luoding}>
             Pakeisti Footerio duomenis
           </Button>
-          {luoding && <Spinner animation="grow" variant="dark" />}
+          {luoding && <h2 className="admin-kraunasi"></h2>}
         </Form>
         {status.value && <Alert variant={status.value}>{status.message}</Alert>}
       </Container>

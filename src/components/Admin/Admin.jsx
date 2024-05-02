@@ -151,7 +151,7 @@ function AdminUser() {
                 <Button type="submit" disabled={loading}>
                   Prisijungti
                 </Button>
-                {loading && <Spinner animation="border" variant="primary" />}
+                {loading && <h2 className="admin-kraunasi"></h2>}
               </Form>
             </Offcanvas.Body>
           </>

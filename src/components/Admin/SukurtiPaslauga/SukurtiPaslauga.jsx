@@ -118,7 +118,7 @@ function SukurtiPaslauga() {
           <Button type="submit" disabled={luoding}>
             Sukurti Paslaugą
           </Button>
-          {luoding && <Spinner animation="grow" variant="green" />}
+          {luoding && <h2 className="admin-kraunasi"></h2>}
         </Form>
         {status.value && <Alert variant={status.value}>{status.message}</Alert>}
       </Container>
