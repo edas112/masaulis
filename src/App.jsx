@@ -19,8 +19,7 @@ function App() {
         <Route path="/paslaugos" element={<Paslaugos />} />
         <Route path="/galerija" element={<Galerija />} />
         <Route path="/kontaktai" element={<Kontaktai />} />
-        <Route path="/admin" element={<Admin />} />
-        {/* {!token && <Route path="/admin" element={<Admin />} />} */}
+        {!token && <Route path="/admin" element={<Admin />} />}
       </Routes>
       <Footer />
     </>
