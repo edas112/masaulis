@@ -1,13 +1,5 @@
 import { useState, useContext } from 'react';
-import {
-  Spinner,
-  Offcanvas,
-  Form,
-  Row,
-  Col,
-  Button,
-  Alert,
-} from 'react-bootstrap';
+import { Offcanvas, Form, Row, Col, Button, Alert } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { cfg } from '../../cfg/cfg';

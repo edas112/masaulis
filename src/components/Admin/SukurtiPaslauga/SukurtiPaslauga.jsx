@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import Form from 'react-bootstrap/Form';
-import { Col, Row, Container, Button, Spinner, Alert } from 'react-bootstrap';
+import { Col, Row, Container, Button, Alert } from 'react-bootstrap';
 import { cfg } from '../../../cfg/cfg';
 import './sukurtiPaslauga.scss';
 import useAuth from '../../../hooks/useAuth';
