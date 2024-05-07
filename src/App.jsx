@@ -10,7 +10,7 @@ import Footer from './components/Footer/Footer';
 import Admin from './components/Admin/Admin';
 import useAuth from './hooks/useAuth';
 function App() {
-  // const { token } = useAuth();
+  const { token } = useAuth();
   return (
     <>
       <Navigacija />
@@ -20,7 +20,7 @@ function App() {
         <Route path="/galerija" element={<Galerija />} />
         <Route path="/kontaktai" element={<Kontaktai />} />
         <Route path="/admin" element={<Admin />} />
-        {/* {token && <Route path="/admin" element={<Admin />} />} */}
+        {token && <Route path="/admin" element={<Admin />} />}
       </Routes>
       <Footer />
     </>
