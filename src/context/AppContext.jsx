@@ -15,7 +15,11 @@ function AppContextProvider(props) {
   const fetchData = async () => {
     try {
       setLoadingPaslaugos(true);
-      const response = await fetch(`${cfg.API.HOST}/kortele`);
+      const response = await fetch(`${cfg.API.HOST}/kortele`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       console.log('response', response);
       const paslaugos = await response.json();
       console.log('data', paslaugos);
@@ -37,7 +41,11 @@ function AppContextProvider(props) {
   const fetchFooterData = async () => {
     try {
       setLoadingFooterData(true);
-      const response = await fetch(`${cfg.API.HOST}/footer`);
+      const response = await fetch(`${cfg.API.HOST}/footer`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       console.log('response', response);
       const footer = await response.json();
       console.log('data', footer);
